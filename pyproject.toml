@@ -12,7 +12,7 @@ python = "^3.11"
 [tool.commitizen]
 name = "cz_conventional_commits"
 tag_format = "v$version"
-version = "0.0.1"
+version = "0.1.0"
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]
