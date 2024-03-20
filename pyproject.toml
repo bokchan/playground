@@ -2,12 +2,15 @@
 authors = ["Andreas Andersen <bok.chan@gmail.com>"]
 description = ""
 name = "github-playground"
-packages = [{include = "github_playground"}]
+packages = [{ include = "github_playground" }]
 readme = "README.md"
 version = "0.1.0"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+poethepoet = "^0.25.0"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
@@ -16,3 +19,15 @@ version = "0.1.0"
 [build-system]
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core"]
+
+
+[tool.poe.tasks.merge-release-pr]
+shell = '''
+    title="$(gh pr view $pr_number --json title | jq -r '.title')";
+    [ -z "$title" ] && echo "Failed to get PR title" && exit 1;
+    gh pr merge $pr_number --merge --delete-branch -t "$title" -b " ";
+
+'''
+args = [
+    { "name" = "pr_number", "required" = true, "positional" = true, "help" = "PR number to merge" },
+]
