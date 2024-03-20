@@ -25,7 +25,7 @@ requires = ["poetry-core"]
 shell = '''
     title="$(gh pr view $pr_number --json title | jq -r '.title')";
     [ -z "$title" ] && echo "Failed to get PR title" && exit 1;
-    gh pr merge $pr_number --merge --delete-branch -t "$title" -b " ";
+    gh pr merge $pr_number --merge --delete-branch -t "$title (#$pr_number)" -b " ";
 
 '''
 args = [
