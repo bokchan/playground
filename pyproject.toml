@@ -4,7 +4,7 @@ description = ""
 name = "github-playground"
 packages = [{ include = "github_playground" }]
 readme = "README.md"
-version = "0.3.1"
+version = "0.3.2"
 
 [tool.poetry.dependencies]
 python = "^3.11"
