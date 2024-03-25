@@ -23,9 +23,10 @@ requires = ["poetry-core"]
 
 [tool.poe.tasks.merge-release-pr]
 shell = '''
-    title="$(gh pr view $pr_number --json title | jq -r '.title')";
-    [ -z "$title" ] && echo "Failed to get PR title" && exit 1;
-    gh pr merge $pr_number --merge --delete-branch -t "$title (#$pr_number)" -b " ";
+    # title="$(gh pr view $pr_number --json title | jq -r '.title')";
+    # [ -z "$title" ] && echo "Failed to get PR title" && exit 1;
+    # gh pr merge $pr_number --merge --delete-branch -t "$title (#$pr_number)" -b " ";
+    gh pr merge $pr_number --merge --delete-branch
 
 '''
 args = [
