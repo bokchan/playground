@@ -1,3 +1,2 @@
 # playground
 
-The new readme
