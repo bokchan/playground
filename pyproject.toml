@@ -4,7 +4,7 @@ description = ""
 name = "github-playground"
 packages = [{ include = "github_playground" }]
 readme = "README.md"
-version = "0.3.0"
+version = "0.3.1"
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -23,10 +23,7 @@ requires = ["poetry-core"]
 
 [tool.poe.tasks.merge-release-pr]
 shell = '''
-    # title="$(gh pr view $pr_number --json title | jq -r '.title')";
-    # [ -z "$title" ] && echo "Failed to get PR title" && exit 1;
-    # gh pr merge $pr_number --merge --delete-branch -t "$title (#$pr_number)" -b " ";
-    gh pr merge $pr_number --merge --delete-branch
+    gh pr merge $pr_number --merge --delete-branch --auto
 
 '''
 args = [
