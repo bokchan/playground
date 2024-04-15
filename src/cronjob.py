@@ -1,0 +1,3 @@
+from contextflow_integration.bg_detection import detect_bg_testing_pattern
+
+detect_bg_testing_pattern()
