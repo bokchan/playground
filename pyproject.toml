@@ -2,13 +2,14 @@
 authors = ["Andreas Andersen <bok.chan@gmail.com>"]
 description = ""
 name = "github-playground"
-packages = [{ include = "github_playground" }]
 readme = "README.md"
 version = "0.3.2"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+contextflow_integration = { git = "https://github.com/glooko/contextflow-backend.git", tag = "contextflow-integration+0.1.0", subdirectory = "contextflow_integration" }
 
+# Add the contextflow_integration subdirectory as a dependency
 [tool.poetry.group.dev.dependencies]
 poethepoet = "^0.25.0"
 
