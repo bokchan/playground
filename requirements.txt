@@ -1,0 +1,1 @@
+contextflow_integration@git+https://github.com/glooko/contextflow-backend@contextflow-integration+0.1.0#subdirectory=contextflow_integration
